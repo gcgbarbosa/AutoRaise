@@ -34,7 +34,7 @@ In our experiments, we used <https://omp.sh/> with default settings.
 
 ### The skill
 
-The skill is in [.omp/skills/wikibase-fast-insert](.omp/skills/wikibase-fast-insert/README.md)
+The skill is in [.omp/skills/wikibase-fast-insert](.omp/skills/wikibase-fast-insert/README.md).
 If you're using other harnesses, adjust acoordingly.
 
 ## Synthesizing
