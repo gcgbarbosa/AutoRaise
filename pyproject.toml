@@ -1,18 +1,18 @@
 [project]
 name = "arw"
 version = "0.1.0"
-description = "Add your description here"
+description = "AutoRaise Wikibase"
 readme = "README.md"
 requires-python = ">=3.12"
 
 
 dependencies = [
-    "asyncmy>=0.2.15",
-    "loguru>=0.7.3",
-    "pydantic>=2.13.5",
-    "pydantic-settings>=2.15.0",
-    "pymysql>=1.2.3",
-    "wikibaseintegrator>=0.12.15",
+  "asyncmy>=0.2.15",
+  "loguru>=0.7.3",
+  "pydantic>=2.13.5",
+  "pydantic-settings>=2.15.0",
+  "pymysql>=1.2.3",
+  "wikibaseintegrator>=0.12.15",
 ]
 
 [project.scripts]
