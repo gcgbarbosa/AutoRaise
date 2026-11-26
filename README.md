@@ -53,6 +53,27 @@ After the synthesis, you need to reset your copy of Wikibase fresh again for ing
 Using the final result to ingest data to your Wikibase instance
 uses the same workflow from [WikibaseIntegrator](https://github.com/LeMyst/WikibaseIntegrator).
 
+You will need to set these environment variables:
+
+```raw
+MEDIAWIKI_API_URL=https://wikibase.example/w/api.php
+WIKIBASE_USERNAME=
+WIKIBASE_PASSWORD=
+DB_HOST=
+DB_PORT=63306
+DB_USER=root
+DB_PASSWORD=
+DB_NAME=my_wiki
+```
+
+Install the branch you need:
+
+```sh
+uv add "git+https://github.com/gcgbarbosa/AutoRaise.git@<version>"
+```
+
+Where version is the name of the [branch](https://github.com/gcgbarbosa/AutoRaise/branches).
+
 ```python
 import asyncio
 from arw.db import FastWbi
