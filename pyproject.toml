@@ -1,0 +1,38 @@
+[project]
+name = "arw"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+
+
+dependencies = [
+    "asyncmy>=0.2.15",
+    "loguru>=0.7.3",
+    "pydantic>=2.13.5",
+    "pydantic-settings>=2.15.0",
+    "pymysql>=1.2.3",
+    "wikibaseintegrator>=0.12.15",
+]
+
+[project.scripts]
+arw = "arw.main:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/arw"]
+
+[tool.pytest.ini_options]
+# ``test`` is on the path so the suites can import the helper they share
+# (``test/support.py``), and ``src`` so they import the package itself.
+pythonpath = ["src", "test"]
+testpaths = ["test"]
+# test/api and test/sql hold same-named modules; importlib keys them by path.
+addopts = ["--import-mode=importlib"]
+markers = ["integration: needs a running Wikibase instance and writes to it"]
+
+[dependency-groups]
+dev = ["pytest>=8.4.2", "ruff>=0.16.4", "ty>=0.0.74"]

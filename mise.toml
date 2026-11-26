@@ -1,0 +1,18 @@
+[tools]
+python = "3.11"
+
+[env]
+_.python.venv = { path = ".venv", create = true } # create the venv if it doesn't exist
+_.file = ".env"
+PYTHONPATH = "src"
+
+[hooks]
+enter = "echo 'Welcome to the AutoRaise project'"
+
+[tasks]
+"lint" = "uv run ruff check src test"
+
+# Both suites need the wiki running: each reads its item back over the API, and
+# the db one inserts the rows itself instead of going through wbeditentity.
+"test:api" = "uv run pytest test/api"
+"test:db" = "uv run pytest test/sql"
